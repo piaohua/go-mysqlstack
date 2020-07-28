@@ -30,4 +30,22 @@ func main() {
 		log.Panic("client.query.error:%+v", err)
 	}
 	log.Info("results:[%+v]", qr.Rows)
+
+	qr, err = client.FetchAll("SELECT id FROM MOCK", -1)
+	if err != nil {
+		log.Panic("client.query.error:%+v", err)
+	}
+	log.Info("results:[%+v]", qr.Rows)
+
+	qr, err = client.FetchAll("SELECT name FROM MOCK", -1)
+	if err != nil {
+		log.Panic("client.query.error:%+v", err)
+	}
+	log.Info("results:[%+v]", qr.Rows)
+
+	qr, err = client.FetchAll("SELECT id, name FROM MOCK", -1)
+	if err != nil {
+		log.Panic("client.query.error:%+v", err)
+	}
+	log.Info("results:[%+v]", qr.Rows)
 }
