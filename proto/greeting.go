@@ -115,8 +115,8 @@ func (g *Greeting) Pack() []byte {
 	buf.WriteZero(1)
 
 	// string[NUL]    auth-plugin name
-	pluginName := "mysql_native_password"
-	buf.WriteString(pluginName)
+	//pluginName := "mysql_native_password"
+	buf.WriteString(DefaultAuthPluginName)
 	buf.WriteZero(1)
 	return buf.Datas()
 }
