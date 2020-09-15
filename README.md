@@ -32,6 +32,29 @@ $ go run example/client.go
   2018/01/26 16:06:10.779340 client.go:32:    [INFO]    results:[[[10 nice name]]]
 ```
 
+## Proxy Examples
+
+1. ***examples/mysqld.go*** mocks a MySQL server by running:
+
+```
+$ go run example/mysqld.go
+  2018/01/26 16:02:02.304376 mysqld.go:52:     [INFO]    mysqld.server.start.address[:4407]
+```
+
+2. ***examples/mysqld_proxy.go*** mocks a Proxy server by running:
+
+```
+$ go run example/mysqld_proxy.go
+  2018/01/26 16:06:10.779340 mysqld_proxy.go:32:    [INFO]    results:[[[10 nice name]]]
+```
+
+3. ***examples/client_proxy.go*** mocks a client and query from the mock MySQL server:
+
+4. 
+```
+mysql -uproxy -pproxy -P 4408 -h127.0.0.1
+```
+
 ## Status
 
 go-mysqlstack is production ready.
